@@ -1,0 +1,40 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
+
+public class Aleatorios
+{
+    public static void main(String[] args) {
+        
+        List<String> opcoes = new ArrayList<>(Arrays.asList(
+            "PID 2256 - 1", 
+            "PID 2256 - 2", 
+            "PID 2256 - 3", 
+            "PID 2245 - 1", 
+            "PID 2245 - 2", 
+            "PID 2245 - 3", 
+            "PID 2278 - 1", 
+            "PID 2278 - 2", 
+            "PID 2278 - 3"
+        ));
+// CURIOSIDADE: shuffle embaralha o array "opcoes"
+// Collections.shuffle(opcoes);
+// IMPORTANTE: import java.util.Collections;
+        
+        System.out.println("Tamanho da Lista cheia: " + opcoes.size());     
+        
+// aleatoriamente ele escolhe um dos arrays entre as 9 opções
+        String resultadoAleatorio = opcoes.get(new Random().nextInt(opcoes.size()));
+        
+        System.out.println("Escolhido para ser excluido: " + resultadoAleatorio);
+        
+// remove remove o elemento que foi escolhi por Random(aleatório)
+        opcoes.remove(resultadoAleatorio);
+        
+        System.out.println("Tamanho da lista depois da exclusão: " + opcoes.size());
+        
+        System.out.println("\nNova lista ficou assim: " + opcoes);
+        
+    }// End main
+}
